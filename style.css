@@ -1,0 +1,1673 @@
+/* ------------------------------------------------ */
+/*                     FONTS                        */
+/* ------------------------------------------------ */
+
+@font-face {
+    font-family: herofont;
+    src: url(/fonts/BonaNovaSC-Regular.ttf);
+}
+
+@font-face {
+    font-family: navfont;
+    src: url(/fonts/Rajdhani-Medium.ttf);
+}
+
+body{
+    overflow-x: hidden;
+}
+
+/* ------------------------------------------------ */
+/*                     NAVBAR                       */
+/* ------------------------------------------------ */
+
+.navbar {
+    width: 100%;
+    padding: 15px 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    z-index: 20;
+    background: rgba(255, 255, 255, 0.95);
+    box-sizing: border-box;
+}
+
+.nav-left,
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.nav-left { right: 55%; }
+.nav-right { left: 55%; }
+
+.nav-left a,
+.nav-right a {
+    position: relative;
+    text-decoration: none;
+    color: #000;
+    font-size: 15px;
+    font-weight: 500;
+    padding: 5px 0;
+    font-family: navfont;
+    transition: 0.3s ease;
+}
+
+.nav-left a:hover,
+.nav-right a:hover {
+    transform: translateY(-3px);
+    color: #d40000;
+}
+
+.nav-left a::after,
+.nav-right a::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -3px;
+    transform: translateX(-50%);
+    width: 0%;
+    height: 2px;
+    background: #800020;
+    transition: 0.3s ease;
+}
+
+.nav-left a:hover::after,
+.nav-right a:hover::after {
+    width: 100%;
+}
+
+.center-logo img {
+    width: 65px;
+    height: auto;
+}
+
+
+/* ------------------------------------------------ */
+/*                 HERO WRAPPER                     */
+/* ------------------------------------------------ */
+
+.hero-wrapper {
+    margin-top: 120px;
+    padding: 50px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+    position: relative;
+    overflow: visible !important;   /* IMPORTANT FIX */
+    background: linear-gradient(120deg, #ffe5e5, #fff0f0, #ffecec);
+    animation: bgMove 6s infinite alternate ease-in-out;
+    border-radius: 20px;
+}
+
+@keyframes bgMove {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
+
+
+/* ------------------------------------------------ */
+/*                  HERO LEFT                       */
+/* ------------------------------------------------ */
+
+.hero-left {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-left h1 {
+    font-size: 52px;
+    font-weight: 800;
+    line-height: 1.2;
+    color: #222;
+    font-family: herofont;
+}
+
+.hero-left h1 span { color: #d40000; }
+
+.hero-left .hero-subtext {
+    font-size: 17px;
+    margin: 15px 0 25px;
+    max-width: 450px;
+    color: #444;
+    font-family: navfont;
+}
+
+.badge {
+    background: #ffdfdf;
+    padding: 8px 18px;
+    border-radius: 20px;
+    color: #d40000;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.btn-red {
+    background: #d40000;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 30px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.3s ease, transform 0.3s ease;
+    font-family: navfont;
+}
+
+.btn-outline {
+    border: 2px solid #d40000;
+    padding: 12px 25px;
+    border-radius: 30px;
+    color: #d40000;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.3s ease, transform 0.3s ease;
+    font-family: navfont;
+}
+
+/* Hover animations */
+.btn-red:hover {
+    background: #b80000;
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 6px 20px rgba(212, 0, 0, 0.35);
+}
+
+.btn-outline:hover {
+    background: #d40000;
+    color: white;
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 6px 20px rgba(212, 0, 0, 0.35);
+}
+
+.stats { display: flex; gap: 40px; margin-top: 40px; }
+.stats div span { font-size: 32px; font-weight: 800; color: #d40000; }
+.stats div p { margin: 0; color: #444; }
+
+
+/* ------------------------------------------------ */
+/*              HERO RIGHT (IMAGE CARD)             */
+/* ------------------------------------------------ */
+
+.hero-right {
+    position: relative;
+    z-index: 5;
+    overflow: visible !important;
+}
+
+/* RED BACK SHADOW */
+.image-card::before {
+    content: "";
+    position: absolute;
+    top: -25px;
+    right: -25px;
+    width: 100%;
+    height: 100%;
+    background: #d40000;
+    border-radius: 28px;
+    z-index: 1 !important;
+}
+
+/* MAIN CARD */
+.image-card {
+    width: 600px;
+    height: 420px;
+    border-radius: 25px;
+    position: relative;
+    overflow: visible !important;  /* MAIN FIX */
+    box-shadow: 0px 8px 25px rgba(0,0,0,0.18);
+    z-index: 10;
+}
+
+.image-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: relative;
+    z-index: 2;
+    border-radius: 28px;
+}
+
+/* HERO IMAGE HOVER ANIMATION */
+.image-card {
+    transition: transform 0.45s ease, box-shadow 0.45s ease;
+}
+
+.image-card:hover {
+    transform: translateY(-12px) scale(1.03);
+    box-shadow: 0px 15px 35px rgba(0,0,0,0.25);
+}
+
+/* Smooth zoom on the main image */
+.image-card img {
+    transition: transform 0.6s ease;
+}
+
+.image-card:hover img {
+    transform: scale(1.07);
+}
+
+/* Floating tags move slightly too */
+.image-card:hover .floating-tag {
+    transform: translateY(-5px);
+    transition: 0.45s ease;
+}
+
+/* Red background shadow movement */
+.image-card:hover::before {
+    transform: translate(8px, -8px);
+    transition: 0.45s ease;
+}
+
+
+
+/* FLOATING TAGS */
+.floating-tag {
+    position: absolute;
+    display: flex;
+    gap: 12px;
+    background: #fff;
+    padding: 13px 18px;
+    border-radius: 16px;
+    box-shadow: 0px 5px 20px rgba(0,0,0,0.15);
+    align-items: center;
+    z-index: 20;
+}
+
+.floating-tag img { width: 38px; }
+.floating-tag h4 { margin: 0; font-size: 17px; font-weight: 700; font-family: navfont; }
+.floating-tag p { margin: 0; font-size: 13px; color: #555; font-family: navfont;}
+
+.top-tag { top: 20px; left: 20px; }
+.bottom-tag { bottom: 20px; right: 20px; }
+
+
+/* ------------------------------------------------ */
+/*             AVAILABILITY BADGE (FIXED)           */
+/* ------------------------------------------------ */
+
+.availability-badge {
+    position: absolute;
+    bottom: -25px;
+    left: 20px;
+    background: #d40000;
+    color: white;
+    padding: 12px 22px;
+    border-radius: 40px;
+    font-weight: 600;
+    font-size: 15px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    box-shadow: 0px 4px 15px rgba(0,0,0,0.25);
+    z-index: 9999 !important;   /* ALWAYS ON TOP */
+}
+
+.availability-badge .dot {
+    width: 12px;
+    height: 12px;
+    background: #00e55c;
+    border-radius: 50%;
+}
+
+
+/* ------------------------------------------------ */
+/*              FLOATING GLOW SHAPES                */
+/* ------------------------------------------------ */
+
+.shape {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.35;
+    filter: blur(40px);
+    z-index: 1;
+    animation: float 10s ease-in-out infinite alternate;
+}
+
+.shape1 { width:180px; height:180px; background:#ffb3b3; top:5%; left:10%; }
+.shape2 { width:250px; height:250px; background:#ff8080; bottom:10%; left:-5%; }
+.shape3 { width:140px; height:140px; background:#ffcccc; top:20%; right:10%; }
+.shape4 { width:200px; height:200px; background:#ff9999; bottom:5%; right:0; }
+
+@keyframes float {
+    0% { transform: translateY(0) scale(1); opacity:0.3; }
+    100% { transform: translateY(-40px) scale(1.1); opacity:0.45; }
+}
+
+
+/* ------------------------------------------------ */
+/*           FLOATING GEOMETRIC SHAPES              */
+/* ------------------------------------------------ */
+
+.geo {
+    position: absolute;
+    opacity: 0.25;
+    z-index: 1;
+    animation: floatShape 6s infinite ease-in-out alternate;
+    pointer-events: none;
+}
+
+.shape-square { width:60px; height:60px; border:3px solid #ff6b6b; top:10%; left:20%; }
+.shape-circle { width:80px; height:80px; border:3px solid #ff8d8d; border-radius:50%; top:50%; left:5%; }
+.shape-triangle {
+    width:0; height:0;
+    border-left:40px solid transparent;
+    border-right:40px solid transparent;
+    border-bottom:70px solid #ff9d9d;
+    top:20%; right:15%;
+}
+.shape-rect {
+    width:120px; height:30px;
+    border:3px solid #ff7f7f;
+    border-radius:8px;
+    bottom:15%; right:10%;
+    rotate:12deg;
+}
+
+@keyframes floatShape {
+    0% { transform: translateY(0); opacity:0.25; }
+    100% { transform: translateY(-25px); opacity:0.45; }
+}
+
+/* ---------------- AVAILABILITY BADGE ANIMATION ---------------- */
+
+.availability-badge {
+    position: absolute;
+    bottom: -25px;
+    left: 20px;
+    background: #d40000;
+    color: white;
+    padding: 12px 22px;
+    border-radius: 40px;
+    font-weight: 600;
+    font-size: 15px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    box-shadow: 0px 4px 15px rgba(0,0,0,0.25);
+    z-index: 9999 !important;
+    
+    /* ANIMATION */
+    transform: scale(0.85);
+    opacity: 0;
+    animation: badgeFade 0.6s ease forwards;
+    transition: background 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Pop-in animation */
+@keyframes badgeFade {
+    0% { transform: scale(0.8); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+/* OPEN (green glow) */
+.open-glow {
+    background: #d40000;
+    box-shadow: 0 0 15px rgba(0, 255, 90, 0.5);
+}
+
+/* CLOSED (red danger glow) */
+.closed-glow {
+    background: #444;
+    box-shadow: 0 0 15px rgba(255, 70, 70, 0.6);
+}
+
+/* DOT COLORS */
+.availability-badge .dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    transition: 0.4s ease;
+}
+
+/* ================= RESPONSIVE BADGE ================= */
+
+@media (max-width: 768px) {
+    .availability-badge {
+        bottom: -15px;
+        left: 10px;
+        padding: 10px 18px;
+        font-size: 13px;
+        transform: scale(0.9);
+    }
+
+    .availability-badge .dot {
+        width: 10px;
+        height: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .availability-badge {
+        bottom: -10px;
+        left: 5px;
+        padding: 8px 15px;
+        font-size: 12px;
+        transform: scale(0.85);
+    }
+
+    .availability-badge .dot {
+        width: 9px;
+        height: 9px;
+    }
+}
+
+/* DOT PULSE ANIMATION */
+.dot {
+    animation: pulseDot 1.6s infinite ease-in-out;
+}
+
+/* KEYFRAMES FOR DOT */
+@keyframes pulseDot {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.35); }
+    100% { transform: scale(1); }
+}
+
+/* GREEN DOT ANIMATION */
+.dot-open {
+    animation: pulseGreen 1.5s infinite ease-in-out;
+}
+
+@keyframes pulseGreen {
+    0%   { transform: scale(1);     background: #00e55c; }
+    50%  { transform: scale(1.45);  background: #00ff75; }
+    100% { transform: scale(1);     background: #00e55c; }
+}
+
+/* RED DOT ANIMATION */
+.dot-closed {
+    animation: pulseRed 1.5s infinite ease-in-out;
+}
+
+@keyframes pulseRed {
+    0%   { transform: scale(1);     background: #ff4747; }
+    50%  { transform: scale(1.45);  background: #ff6b6b; }
+    100% { transform: scale(1);     background: #ff4747; }
+}
+
+/* ---------------- ABOUT SECTION ---------------- */
+
+.about-section {
+    margin-top: -70px;
+    padding: 70px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 60px;
+}
+
+/* Left side */
+.about-left {
+    width: 50%;
+}
+
+.about-left h2 {
+    font-size: 48px;
+    font-family: herofont;
+    margin-bottom: 20px;
+    color: #222;
+}
+
+.about-left h2 span {
+    color: #d40000;
+}
+
+.about-left p {
+    font-size: 17px;
+    line-height: 1.7;
+    color: #444;
+    margin-bottom: 18px;
+    font-family: navfont;
+}
+
+/* Highlight cards */
+.about-highlights {
+    margin-top: 25px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.highlight-card {
+    background: white;
+    padding: 20px 18px;
+    border-radius: 18px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    border-left: 4px solid #d40000;
+    transition: 0.4s eas;
+}
+
+.highlight-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+}
+
+.highlight-card h3 {
+    font-size: 20px;
+    margin-bottom: 6px;
+    color: #d40000;
+    font-family: navfont;
+}
+
+.highlight-card p {
+    font-size: 14px;
+    color: #555;
+}
+
+/* Right side image */
+.about-right {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+}
+
+.about-image-card {
+    width: 90%;
+    border-radius: 25px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 12px 35px rgba(0,0,0,0.18);
+    transition: 0.5s ease;
+}
+
+.about-image-card:hover {
+    transform: translateY(-10px) scale(1.03);
+}
+
+.about-image-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Trusted badge */
+.about-badge {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background: #d40000;
+    padding: 10px 20px;
+    color: white;
+    border-radius: 30px;
+    font-weight: 600;
+    font-family: navfont;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* ---------------- RESPONSIVE ---------------- */
+
+@media (max-width: 900px) {
+    .about-section {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-left, .about-right {
+        width: 100%;
+    }
+
+    .about-highlights {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .about-image-card {
+        width: 100%;
+    }
+}
+
+/* ------------------------------------------------ */
+/*          RED & WHITE GLASSMORPHISM BG            */
+/* ------------------------------------------------ */
+
+.about-section {
+    margin-top: 25px;
+    padding: 80px 8%;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 60px;
+    overflow: visible;
+}
+
+/* GLASS CARD BACKDROP */
+.glass-bg {
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(18px) saturate(160%);
+    -webkit-backdrop-filter: blur(18px) saturate(160%);
+    border-radius: 28px;
+    border: 1px solid rgba(255, 255, 255, 0.45);
+    box-shadow: 0px 8px 35px rgba(212, 0, 0, 0.25);
+    z-index: 1;
+}
+
+/* Ensure content is above background */
+.about-left,
+.about-right {
+    position: relative;
+    z-index: 3;
+}
+
+/* HEADINGS */
+.about-left h2 {
+    font-size: 48px;
+    font-family: herofont;
+    margin-bottom: 18px;
+    color: #222;
+}
+
+.about-left h2 span {
+    color: #d40000;
+}
+
+/* TEXT */
+.about-left p {
+    font-size: 17px;
+    line-height: 1.7;
+    color: #333;
+    margin-bottom: 18px;
+    font-family: navfont;
+}
+
+/* HIGHLIGHT CARDS */
+.about-highlights {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.highlight-card {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    padding: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    backdrop-filter: blur(10px);
+    transition: 0.35s ease;
+    box-shadow: 0px 6px 22px rgba(0, 0, 0, 0.1);
+}
+
+.highlight-card:hover {
+    transform: translateY(-8px);
+    background: rgba(255, 255, 255, 0.35);
+    box-shadow: 0px 10px 30px rgba(212, 0, 0, 0.25);
+}
+
+/* TEXT INSIDE CARD */
+.highlight-card h3 {
+    font-size: 20px;
+    color: #d40000;
+    margin-bottom: 6px;
+    font-family: navfont;
+}
+
+.highlight-card p {
+    font-size: 14px;
+    color: #444;
+}
+
+/* RIGHT IMAGE SIDE */
+.about-right {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+}
+
+.about-image-card {
+    width: 90%;
+    border-radius: 25px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 12px 35px rgba(0,0,0,0.18);
+    transition: 0.45s ease;
+}
+
+.about-image-card:hover {
+    transform: translateY(-10px) scale(1.03);
+}
+
+/* TRUST BADGE */
+.about-badge {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background: #d40000;
+    padding: 10px 22px;
+    color: white;
+    font-weight: 600;
+    border-radius: 30px;
+    font-family: navfont;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+}
+
+/* RESPONSIVE */
+@media(max-width: 900px) {
+    .about-section {
+        flex-direction: column;
+        text-align: center;
+        padding: 60px 6%;
+    }
+
+    .about-left, .about-right {
+        width: 100%;
+    }
+
+    .about-highlights {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ------------------------------------------------ */
+/*           BUSINESSMEN SERVICES SECTION           */
+/* ------------------------------------------------ */
+
+.business-services {
+    margin-top: 60px;
+    padding: 90px 8%;
+    position: relative;
+    text-align: center;
+}
+
+/* Glass Background */
+.bs-glass {
+    position: absolute;
+    inset: 0;
+    background: rgba(255,255,255,0.22);
+    border-radius: 28px;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(255,255,255,0.4);
+    box-shadow: 0 10px 35px rgba(212,0,0,0.18);
+    z-index: 1;
+}
+
+/* Header */
+.bs-header {
+    position: relative;
+    z-index: 3;
+    margin-bottom: 50px;
+}
+
+.bs-header h2 {
+    font-size: 48px;
+    font-family: herofont;
+    color: #222;
+}
+
+.bs-header h2 span {
+    color: #d40000;
+}
+
+.bs-header p {
+    max-width: 700px;
+    margin: 15px auto 0;
+    font-size: 17px;
+    line-height: 1.7;
+    color: #444;
+    font-family: navfont;
+}
+
+/* Grid */
+.bs-grid {
+    position: relative;
+    z-index: 3;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+}
+
+/* Cards */
+.bs-card {
+    background: rgba(255,255,255,0.25);
+    border-radius: 20px;
+    padding: 35px 25px;
+    border: 2px solid rgba(212,0,0,0.4);
+
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    transition: 
+        transform 0.35s ease,
+        border-color 0.35s ease,
+        background 0.35s ease,
+        box-shadow 0.35s ease;
+
+    text-align: center;
+}
+
+/* Card Hover */
+.bs-card:hover {
+    transform: translateY(-10px);
+    border-color: #d40000;
+    background: rgba(255,255,255,0.35);
+    box-shadow: 0 15px 40px rgba(212,0,0,0.25);
+}
+
+/* Icon Box */
+.icon-box {
+    width: 85px;
+    height: 85px;
+    border-radius: 18px;
+    background: #ffe4e4;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0 auto 18px;
+
+    transition: 
+        background 0.35s ease,
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+/* Icon Image */
+.icon-box img {
+    width: 42px;
+    transition: filter 0.35s ease;
+}
+
+/* Icon Hover Effect */
+.bs-card:hover .icon-box {
+    background: #d40000;
+    transform: translateY(-6px);
+    box-shadow: 0 12px 28px rgba(212,0,0,0.30);
+}
+
+.bs-card:hover .icon-box img {
+    filter: brightness(0) invert(1);
+}
+
+/* Text */
+.bs-card h3 {
+    margin: 0;
+    font-size: 20px;
+    font-family: navfont;
+    font-weight: 700;
+    color: #d40000;
+    transition: transform 0.3s ease;
+}
+
+.bs-card p {
+    margin-top: 8px;
+    font-size: 14px;
+    color: #444;
+    line-height: 1.6;
+    font-family: navfont;
+    transition: transform 0.3s ease;
+}
+
+/* Text Hover Lift */
+.bs-card:hover h3,
+.bs-card:hover p {
+    transform: translateY(-3px);
+}
+
+/* Responsive */
+@media(max-width: 900px) {
+    .bs-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media(max-width: 600px) {
+    .bs-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Hidden cards */
+.hidden-card {
+    display: none;
+    opacity: 0;
+    transform: translateY(-10px);
+}
+
+/* View More Button */
+.view-btn-wrapper {
+    margin-top: 35px;
+    position: relative;
+    z-index: 5;
+}
+
+.view-more-btn {
+    padding: 14px 28px;
+    background: #d40000;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-family: navfont;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.35s ease;
+}
+
+.view-more-btn:hover {
+    transform: translateY(-3px) scale(1.05);
+    background: #b80000;
+    box-shadow: 0px 8px 25px rgba(212,0,0,0.35);
+}
+
+/* Slide animation */
+@keyframes slideDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+/* ============================= */
+/*       HOLIDAY SECTION         */
+/* ============================= */
+
+.holiday-services {
+    margin-top: 80px;
+    padding: 90px 8%;
+    position: relative;
+    text-align: center;
+    overflow: visible;
+}
+
+.holiday-glass {
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.25);
+    border-radius: 28px;
+    backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 255, 255, 0.45);
+    box-shadow: 0 12px 35px rgba(212, 0, 0, 0.22);
+    z-index: 1;
+}
+
+/* HEADER */
+.holiday-header {
+    position: relative;
+    z-index: 3;
+    margin-bottom: 50px;
+}
+
+.holiday-header h2 {
+    font-size: 48px;
+    font-family: herofont;
+    color: #222;
+}
+
+.holiday-header h2 span {
+    color: #d40000;
+}
+
+.holiday-header p {
+    max-width: 700px;
+    margin: 15px auto 0;
+    font-size: 17px;
+    font-family: navfont;
+    color: #444;
+}
+
+/* GRID (same as businessmen) */
+.holiday-grid {
+    position: relative;
+    z-index: 3;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+}
+
+/* HOLIDAY CARD */
+.holiday-card {
+    background: rgba(255, 255, 255, 0.25);
+    border-radius: 18px;
+    border: 2px solid rgba(212, 0, 0, 0.35);
+    overflow: hidden;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+    transition: 
+        transform 0.35s ease,
+        border-color 0.35s ease,
+        background 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+.holiday-card:hover {
+    transform: translateY(-8px);
+    border-color: #d40000;
+    background: rgba(255, 255, 255, 0.35);
+    box-shadow: 0 18px 40px rgba(212, 0, 0, 0.25);
+}
+
+/* IMAGE WRAPPER */
+.holiday-img-wrapper {
+    height: 210px;
+    position: relative;
+    overflow: hidden;
+}
+
+.holiday-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.45s ease;
+}
+
+.holiday-card:hover .holiday-img-wrapper img {
+    transform: scale(1.06);
+}
+
+/* ICON BOX */
+.holiday-icon-box {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    width: 80px;
+    height: auto;
+    background: white;
+    border-radius: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.18);
+    transition: 0.35s ease;
+}
+
+.holiday-icon-box img {
+    width: 42px;
+    transition: filter 0.35s ease;
+}
+
+.holiday-card:hover .holiday-icon-box {
+    background: #d40000;
+    transform: translateY(-4px);
+}
+
+.holiday-card:hover .holiday-icon-box img {
+    filter: brightness(0) invert(1);
+}
+
+/* CONTENT */
+.holiday-content {
+    padding: 22px 25px;
+    text-align: left;
+}
+
+.holiday-content h3 {
+    font-size: 22px;
+    margin: 0;
+    font-family: navfont;
+    color: #222;
+    transition: transform 0.3s ease;
+}
+
+.holiday-content p {
+    font-size: 15px;
+    color: #666;
+    margin-top: 6px;
+    font-family: navfont;
+    line-height: 1.6;
+    transition: transform 0.3s ease;
+}
+
+.holiday-card:hover h3,
+.holiday-card:hover p {
+    transform: translateY(-3px);
+}
+
+/* HIDDEN CARDS */
+.holiday-hidden-card {
+    display: none;
+    opacity: 0;
+}
+
+/* SHOW CLASS FOR ANIMATION */
+.holiday-hidden-card.show {
+    display: block;
+    animation: slideDown 0.4s ease forwards;
+}
+
+/* BUTTON */
+.holiday-view-btn-wrapper {
+    position: relative;
+    z-index: 3;
+    margin-top: 35px;
+}
+
+#holidayViewBtn {
+    padding: 12px 32px;
+    background: #d40000;
+    border: none;
+    border-radius: 30px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    font-family: navfont;
+    transition: 0.3s ease;
+}
+
+#holidayViewBtn:hover {
+    background: #b80000;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(212,0,0,0.35);
+}
+
+/* ANIMATION */
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .holiday-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .holiday-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ======================== */
+/*   OUR OTHER DIVISIONS    */
+/* ======================== */
+
+.divisions-section {
+    margin-top: 80px;
+    padding: 90px 8%;
+    position: relative;
+    overflow: visible;
+}
+
+/* Glass background */
+.divisions-glass {
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.22);
+    border-radius: 28px;
+    backdrop-filter: blur(14px) saturate(160%);
+    -webkit-backdrop-filter: blur(14px) saturate(160%);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 10px 35px rgba(212, 0, 0, 0.18);
+    z-index: 1;
+}
+
+/* Header */
+.divisions-header {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.divisions-header h2 {
+    font-size: 48px;
+    font-family: herofont;
+    color: #222;
+}
+
+.divisions-header h2 span {
+    color: #d40000;
+}
+
+.divisions-header p {
+    margin-top: 10px;
+    font-size: 17px;
+    font-family: navfont;
+    color: #555;
+}
+
+/* GRID */
+.divisions-grid {
+    z-index: 3;
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+}
+
+/* CARD */
+.division-card {
+    background: rgba(255,255,255,0.2);
+    border-radius: 18px;
+    overflow: hidden;
+    border: 2px solid rgba(212,0,0,0.35);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+    transition: 0.35s ease;
+}
+
+/* IMAGE */
+.division-img-wrapper img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.45s ease;
+}
+
+/* CONTENT */
+.division-content {
+    padding: 20px;
+    text-align: left;
+}
+
+.division-content h3 {
+    margin: 0;
+    font-size: 20px;
+    color: #d40000;
+    font-family: navfont;
+}
+
+.division-content p {
+    margin-top: 6px;
+    font-size: 14px;
+    font-family: navfont;
+    color: #444;
+}
+
+/* HOVER EFFECTS */
+.division-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 40px rgba(212,0,0,0.25);
+    background: rgba(255,255,255,0.35);
+}
+
+.division-card:hover img {
+    transform: scale(1.08);
+}
+
+/* RESPONSIVE */
+@media(max-width: 900px) {
+    .divisions-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media(max-width: 600px) {
+    .divisions-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ========================= */
+/*         FOOTER            */
+/* ========================= */
+
+.footer-section {
+    margin-top: 120px;
+    padding: 70px 8% 35px;
+    position: relative;
+    background: transparent;
+}
+
+/* Glass Background */
+.footer-glass {
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.22);
+    border-radius: 30px;
+    backdrop-filter: blur(14px) saturate(160%);
+    -webkit-backdrop-filter: blur(14px) saturate(160%);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 12px 30px rgba(212, 0, 0, 0.18);
+    z-index: 1;
+}
+
+.footer-content {
+    position: relative;
+    z-index: 5;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+/* Column Styling */
+.footer-col h3 {
+    font-size: 20px;
+    font-family: herofont;
+    color: #d40000;
+    margin-bottom: 12px;
+}
+
+.footer-col p {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 8px;
+    font-family: navfont;
+}
+
+/* Logo */
+.footer-logo img {
+    width: 75px;
+    margin-bottom: 12px;
+}
+
+.footer-logo p {
+    max-width: 260px;
+    font-size: 15px;
+    color: #444;
+}
+
+/* Social Icons */
+.footer-socials {
+    display: flex;
+    gap: 14px;
+    margin-top: 8px;
+}
+
+.footer-socials a img {
+    width: 32px;
+    filter: grayscale(1) brightness(0.6);
+    transition: 0.3s ease;
+}
+
+.footer-socials a:hover img {
+    transform: translateY(-4px) scale(1.1);
+    filter: grayscale(0) brightness(1);
+}
+
+/* Bottom copyright */
+.footer-bottom {
+    position: relative;
+    z-index: 5;
+    margin-top: 45px;
+    text-align: center;
+}
+
+.footer-bottom p {
+    font-size: 15px;
+    color: #555;
+    font-family: navfont;
+}
+
+.footer-bottom span {
+    color: #d40000;
+    font-weight: 700;
+}
+
+/* Responsive */
+@media(max-width: 900px) {
+    .footer-content {
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+        text-align: center;
+    }
+
+    .footer-logo img {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media(max-width: 600px) {
+    .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+}
+
+/* ========================= */
+/*   WHATSAPP FLOATING BTN   */
+/* ========================= */
+
+.whatsapp-float {
+    position: fixed;
+    bottom: 28px;
+    right: 28px;
+    width: 65px;
+    height: 65px;
+    background: #25d366;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25),
+                0 0 12px rgba(37, 211, 102, 0.6);
+
+    z-index: 99999;
+    transition: 0.35s ease;
+    animation: whatsappPulse 1.8s infinite ease-in-out;
+}
+
+.whatsapp-float img {
+    width: 35px;
+}
+
+/* HOVER EFFECT */
+.whatsapp-float:hover {
+    transform: scale(1.15) translateY(-4px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3),
+                0 0 16px rgba(37, 211, 102, 0.75);
+}
+
+/* Pulse Animation */
+@keyframes whatsappPulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.12); }
+    100% { transform: scale(1); }
+}
+
+/* MOBILE OPTIMIZATION */
+@media (max-width: 600px) {
+    .whatsapp-float {
+        width: 55px;
+        height: 55px;
+        bottom: 20px;
+        right: 20px;
+    }
+
+    .whatsapp-float img {
+        width: 28px;
+    }
+}
+
+/* ============================
+   HERO RESPONSIVE
+============================ */
+
+@media (max-width: 1024px) {
+    .hero-wrapper {
+        flex-direction: column-reverse;
+        text-align: center;
+        padding: 50px 5%;
+        gap: 40px;
+    }
+
+    .hero-left {
+        width: 100%;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .hero-left h1 {
+        font-size: 42px;
+        line-height: 1.25;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .hero-right .image-card {
+        width: 100%;
+        max-width: 500px;
+        height: auto;
+    }
+}
+
+@media (max-width: 600px) {
+    .hero-wrapper {
+        padding: 40px 4%;
+    }
+
+    .hero-left h1 {
+        font-size: 34px;
+    }
+
+    .hero-left .hero-subtext {
+        font-size: 15px;
+        max-width: 90%;
+    }
+
+    .stats {
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+    }
+
+    .image-card {
+        width: 100%;
+        height: 320px !important;
+    }
+}
+
+/* ============================
+   BUSINESSMEN SERVICES 
+============================ */
+
+.bs-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.bs-header h2 {
+    font-size: 46px;
+    font-weight: 800;
+}
+
+@media (max-width: 1024px) {
+    .bs-header h2 {
+        font-size: 40px;
+    }
+    .bs-header p {
+        max-width: 80%;
+        margin: auto;
+    }
+}
+
+/* GRID FIX */
+@media (max-width: 1024px) {
+    .bs-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 22px;
+    }
+}
+
+@media (max-width: 600px) {
+    .bs-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .bs-card {
+        padding: 25px 20px;
+    }
+
+    .bs-header h2 {
+        font-size: 32px;
+    }
+}
+
+/* ==================================
+   HIDE NAV LINKS ON MOBILE & TABLET
+================================== */
+
+@media (max-width: 768px) {
+    .nav-left,
+    .nav-right {
+        display: none !important;
+    }
+
+    .navbar {
+        justify-content: center !important;
+        padding: 12px 20px;
+    }
+
+    .center-logo img {
+        width: 55px; /* slightly smaller for mobile */
+    }
+}
+
+
+/* WHATSAPP FLOAT */
+.whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background: #25d366;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999999 !important; /* HIGHEST PRIORITY */
+    box-shadow: 0 6px 25px rgba(0,0,0,0.25);
+    transition: 0.3s ease;
+}
+
+.whatsapp-float img {
+    width: 32px;
+    height: 32px;
+}
+
+/* Hover effect */
+.whatsapp-float:hover {
+    transform: scale(1.1);
+}
+
+/* MOBILE FIX */
+@media (max-width: 600px) {
+    .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        bottom: 15px;
+        right: 15px;
+        z-index: 999999 !important;
+    }
+
+    .whatsapp-float img {
+        width: 26px;
+        height: 26px;
+    }
+}
+
+/* SOCIAL ICON CENTER FIX FOR MOBILE */
+@media (max-width: 768px) {
+    .footer-socials {
+        display: flex;
+        justify-content: center !important;
+        align-items: center !important;
+        gap: 18px;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .footer-col {
+        text-align: center !important;
+    }
+
+    .footer-col h3 {
+        text-align: center !important;
+    }
+}
