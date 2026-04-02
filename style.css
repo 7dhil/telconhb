@@ -1422,6 +1422,15 @@ body {
   color: #cc0033;
 }
 
+.footer-bottom a {
+    color: red;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.footer-bottom a:hover {
+    text-decoration: underline;
+}
 
 
 /* ================= RESPONSIVE ================= */
