@@ -1450,15 +1450,14 @@ body {
 /* MOBILE (0 - 480px) */
 @media (max-width: 480px) {
   .hero {
-    height: 65vh; /* Reduces height to fit the landscape image better on portrait screens */
+    height: 100vh;
     background-position: center;
-    /* background-size: contain; /* Uncomment this if you want ZERO cropping (but it will leave empty space below) */
   }
 
   .logo-left {
-    height: 75px;
-    top: -5px;
-    left: 10px;
+    height: 65px;
+    top: 15px;
+    left: 15px;
   }
 
   .logo-right {
@@ -1468,10 +1467,12 @@ body {
   }
 
   .hero-title {
-    font-size: 28px;
+    font-size: 32px;
     left: 20px;
-    top: 60%;
-    max-width: 85%;
+    top: 40%;
+    transform: translateY(-50%);
+    max-width: 90%;
+    line-height: 1.35;
   }
 
   .loader-inner {
