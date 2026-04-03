@@ -923,7 +923,7 @@ body{
 
 /* Logo */
 .footer-logo img {
-    width: 75px;
+    width: 100px;
     margin-bottom: 12px;
 }
 
@@ -968,6 +968,18 @@ body{
 .footer-bottom span {
     color: #d40000;
     font-weight: 700;
+}
+
+/* Watermark image */
+.footer-bottom .watermark-logo {
+    height: 70px;
+    vertical-align: middle;
+    margin-left: 6px;
+    transition: transform 0.3s ease;
+}
+
+.footer-bottom a:hover .watermark-logo {
+    transform: scale(1.08);
 }
 
 /* Responsive */
@@ -1392,7 +1404,7 @@ body {
 .logo-left {
   top: -11px;
   left: 10px;
-  height: 85px;
+  height: 120px;
 }
 
 /* TOP-RIGHT LOGO */
@@ -1444,7 +1456,7 @@ body {
   }
 
   .logo-left {
-    height: 55px;
+    height: 75px;
     top: -5px;
     left: 10px;
   }
@@ -1475,7 +1487,7 @@ body {
   }
 
   .logo-left {
-    height: 75px;
+    height: 100px;
     top: -8px;
   }
 
@@ -1495,7 +1507,7 @@ body {
 /* LARGE SCREENS (1025px +) */
 @media (min-width: 1025px) {
   .logo-left {
-    height: 100px;
+    height: 140px;
   }
 
   .logo-right {
