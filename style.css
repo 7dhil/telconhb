@@ -994,6 +994,10 @@ body{
         margin-left: auto;
         margin-right: auto;
     }
+
+    .footer-logo p {
+        margin: 0 auto;
+    }
 }
 
 @media(max-width: 600px) {
