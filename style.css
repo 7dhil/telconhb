@@ -1451,7 +1451,7 @@ body {
 @media (max-width: 480px) {
   .hero {
     height: 100vh;
-    background-position: center;
+    background: url("/images/hero\ bg\ for\ mobile\ .png") center/cover no-repeat;
   }
 
   .logo-left {
