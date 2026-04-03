@@ -612,9 +612,26 @@
           loaderEl.classList.add("hidden");
           mainEl.style.display = "block";
           document.body.style.overflow = "auto";
+          
+          // Trigger WhatsApp bubble pop animation
+          const wpBtn = document.querySelector('.whatsapp-float');
+          if (wpBtn) {
+            wpBtn.classList.add('show-bubble');
+          }
         }, 4600);
       });
     </script>
 
+    <!-- WHATSAPP POP ANIMATION -->
+    <script>
+      const wpBtn = document.querySelector('.whatsapp-float');
+      if (wpBtn) {
+        wpBtn.addEventListener('click', () => {
+          wpBtn.classList.add('clicked-pop');
+          // Remove the class after 1 second so the normal float animation resumes
+          setTimeout(() => wpBtn.classList.remove('clicked-pop'), 1000);
+        });
+      }
+    </script>
 </body>
 </html>

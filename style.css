@@ -199,8 +199,8 @@ body{
 /* ------------------------------------------------ */
 
 .about-section {
-    margin-top: 25px;
-    padding: 80px 8%;
+    margin-top: 10px;
+    padding: 60px 8%;
     position: relative;
     display: flex;
     justify-content: space-between;
@@ -216,7 +216,6 @@ body{
     background: rgba(255, 255, 255, 0.25);
     backdrop-filter: blur(18px) saturate(160%);
     -webkit-backdrop-filter: blur(18px) saturate(160%);
-    border-radius: 28px;
     border: 1px solid rgba(255, 255, 255, 0.45);
     box-shadow: 0px 8px 35px rgba(212, 0, 0, 0.25);
     z-index: 1;
@@ -325,7 +324,7 @@ body{
     .about-section {
         flex-direction: column;
         text-align: center;
-        padding: 60px 6%;
+        padding: 40px 6%;
     }
 
     .about-left, .about-right {
@@ -342,8 +341,8 @@ body{
 /* ------------------------------------------------ */
 
 .business-services {
-    margin-top: 60px;
-    padding: 90px 8%;
+    margin-top: 30px;
+    padding: 60px 8%;
     position: relative;
     text-align: center;
 }
@@ -353,7 +352,6 @@ body{
     position: absolute;
     inset: 0;
     background: rgba(255,255,255,0.22);
-    border-radius: 28px;
     backdrop-filter: blur(14px);
     -webkit-backdrop-filter: blur(14px);
     border: 1px solid rgba(255,255,255,0.4);
@@ -546,8 +544,8 @@ body{
 /* ============================= */
 
 .holiday-services {
-    margin-top: 80px;
-    padding: 90px 8%;
+    margin-top: 30px;
+    padding: 60px 8%;
     position: relative;
     text-align: center;
     overflow: visible;
@@ -557,7 +555,6 @@ body{
     position: absolute;
     inset: 0;
     background: rgba(255, 255, 255, 0.25);
-    border-radius: 28px;
     backdrop-filter: blur(14px);
     border: 1px solid rgba(255, 255, 255, 0.45);
     box-shadow: 0 12px 35px rgba(212, 0, 0, 0.22);
@@ -757,8 +754,8 @@ body{
 /* ======================== */
 
 .divisions-section {
-    margin-top: 80px;
-    padding: 90px 8%;
+    margin-top: 30px;
+    padding: 60px 8%;
     position: relative;
     overflow: visible;
 }
@@ -768,7 +765,6 @@ body{
     position: absolute;
     inset: 0;
     background: rgba(255, 255, 255, 0.22);
-    border-radius: 28px;
     backdrop-filter: blur(14px) saturate(160%);
     -webkit-backdrop-filter: blur(14px) saturate(160%);
     border: 1px solid rgba(255, 255, 255, 0.4);
@@ -878,8 +874,8 @@ body{
 /* ========================= */
 
 .footer-section {
-    margin-top: 120px;
-    padding: 70px 8% 35px;
+    margin-top: 60px;
+    padding: 50px 8% 35px;
     position: relative;
     background: transparent;
 }
@@ -889,7 +885,6 @@ body{
     position: absolute;
     inset: 0;
     background: rgba(255, 255, 255, 0.22);
-    border-radius: 30px;
     backdrop-filter: blur(14px) saturate(160%);
     -webkit-backdrop-filter: blur(14px) saturate(160%);
     border: 1px solid rgba(255, 255, 255, 0.4);
@@ -1030,36 +1025,77 @@ body{
     right: 28px;
     width: 65px;
     height: 65px;
-    background: #25d366;
+    background: radial-gradient(circle at 30% 30%, #5ae890, #25d366 60%, #128c7e);
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 999999 !important;
 
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25),
-                0 0 12px rgba(37, 211, 102, 0.6);
+    /* HD 3D Bubble Shadow */
+    box-shadow: 0 12px 28px rgba(37, 211, 102, 0.4), 
+                inset 0 6px 12px rgba(255, 255, 255, 0.6), 
+                inset 0 -4px 8px rgba(0, 0, 0, 0.15);
 
-    z-index: 99999;
     transition: 0.35s ease;
-    animation: whatsappPulse 1.8s infinite ease-in-out;
+    opacity: 0;
+    transform: scale(0);
+    pointer-events: none;
 }
 
 .whatsapp-float img {
-    width: 35px;
+    width: 38px;
+    height: 38px;
+    object-fit: contain;
+    filter: drop-shadow(0 3px 5px rgba(0,0,0,0.25)); /* HD icon shadow */
 }
 
 /* HOVER EFFECT */
 .whatsapp-float:hover {
-    transform: scale(1.15) translateY(-4px);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3),
-                0 0 16px rgba(37, 211, 102, 0.75);
+    transform: scale(1.25) translateY(-6px) rotate(8deg);
+    box-shadow: 0 16px 35px rgba(37, 211, 102, 0.5), 
+                inset 0 8px 14px rgba(255, 255, 255, 0.8), 
+                inset 0 -4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Pulse Animation */
-@keyframes whatsappPulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.12); }
-    100% { transform: scale(1); }
+/* Bubble Float Animation */
+@keyframes bubbleFloat {
+    0% { transform: translateY(0) scale(1); }
+    50% { 
+        transform: translateY(-10px) scale(1.02); 
+        box-shadow: 0 20px 35px rgba(37, 211, 102, 0.3), 
+                    inset 0 6px 12px rgba(255, 255, 255, 0.6), 
+                    inset 0 -4px 8px rgba(0, 0, 0, 0.15);
+    }
+    100% { transform: translateY(0) scale(1); }
+}
+
+/* BUBBLE APPEAR ANIMATION */
+.whatsapp-float.show-bubble {
+    opacity: 1;
+    pointer-events: auto;
+    animation: 
+        popInBubble 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards,
+        bubbleFloat 3s infinite ease-in-out 0.8s forwards;
+}
+
+@keyframes popInBubble {
+    0% { opacity: 0; transform: scale(0) translateY(30px); }
+    100% { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+/* CLICK POP ANIMATION */
+.whatsapp-float.clicked-pop {
+    animation: popAndReturn 1s cubic-bezier(0.25, 1, 0.5, 1) forwards !important;
+    pointer-events: none; /* Prevents multiple clicks while popping */
+}
+
+@keyframes popAndReturn {
+    0% { transform: scale(1.15) translateY(-6px); opacity: 1; }
+    15% { transform: scale(1.4) translateY(-10px); opacity: 0; }
+    40% { transform: scale(0) translateY(0); opacity: 0; }
+    70% { transform: scale(1.15) translateY(0); opacity: 1; }
+    100% { transform: scale(1) translateY(0); opacity: 1; }
 }
 
 /* MOBILE OPTIMIZATION */
@@ -1204,49 +1240,6 @@ body{
     }
 }
 
-
-/* WHATSAPP FLOAT */
-.whatsapp-float {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    width: 60px;
-    height: 60px;
-    background: #25d366;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 999999 !important; /* HIGHEST PRIORITY */
-    box-shadow: 0 6px 25px rgba(0,0,0,0.25);
-    transition: 0.3s ease;
-}
-
-.whatsapp-float img {
-    width: 32px;
-    height: 32px;
-}
-
-/* Hover effect */
-.whatsapp-float:hover {
-    transform: scale(1.1);
-}
-
-/* MOBILE FIX */
-@media (max-width: 600px) {
-    .whatsapp-float {
-        width: 50px;
-        height: 50px;
-        bottom: 15px;
-        right: 15px;
-        z-index: 999999 !important;
-    }
-
-    .whatsapp-float img {
-        width: 26px;
-        height: 26px;
-    }
-}
 
 /* SOCIAL ICON CENTER FIX FOR MOBILE */
 @media (max-width: 768px) {
