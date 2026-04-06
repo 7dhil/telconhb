@@ -1399,7 +1399,7 @@ body {
 .hero {
   height: 100vh;
   width: 100%;
-  background: url("/images/hero\ new\ bg\ \(4\).svg") center/cover no-repeat;
+  background: url("/images/hero\ new\ bg\ \(4\).webp") center/cover no-repeat;
   position: relative;
 }
 
@@ -1461,7 +1461,7 @@ body {
 @media (max-width: 480px) {
   .hero {
     height: 100vh;
-    background: url("/images/hero\ bg\ for\ mbile\ 2.png") center/cover no-repeat;
+    background: url("/images/hero.webp") center/cover no-repeat;
   }
 
   .logo-left {
